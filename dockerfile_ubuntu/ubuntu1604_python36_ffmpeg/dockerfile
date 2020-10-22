@@ -11,7 +11,7 @@ FROM registry.cn-shanghai.aliyuncs.com/delogo/ubuntu1604_ffmpeg_python36:v0
 
 WORKDIR /usr/app
 
-RUN pip install --upgrade pip && pip install -r requirements.txt -i https://pypi.douban.com/simple --ignore-installed && mkdir -p /data /data_image
 ADD ./ ./
+RUN pip install --upgrade pip && pip install -r requirements.txt -i https://pypi.douban.com/simple --ignore-installed && mkdir -p /data /data_image
 
 CMD bash
