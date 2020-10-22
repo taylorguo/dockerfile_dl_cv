@@ -1,0 +1,17 @@
+# Ubuntu16.04, ffmpeg version 2.8.15-0ubuntu0.16.04.1, 
+# gcc (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609
+# g++ (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609
+# python    - Python 2.7.12
+# python3   - Python 3.5.2
+# python3.6 - Python 3.6.8
+# pip - pip 19.3.1 from /usr/local/lib/python3.6/dist-packages/pip (python 3.6)
+# ffmpeg-python==0.2.0
+
+FROM registry.cn-shanghai.aliyuncs.com/delogo/cuda10_cudnn7_ubuntu1604_python36:v0
+
+WORKDIR /usr/app
+
+RUN pip install --upgrade pip && pip install numpy==1.16.0 -i https://pypi.douban.com/simple --ignore-installed && mkdir -p /data /data_image
+ADD ./ ./
+
+CMD bash
