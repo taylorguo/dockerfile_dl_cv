@@ -11,7 +11,7 @@ FROM registry.cn-shanghai.aliyuncs.com/delogo/cuda10_cudnn7_ubuntu1604_python36:
 
 WORKDIR /usr/app
 
-RUN pip install --upgrade pip && pip install numpy==1.16.0 -i https://pypi.douban.com/simple --ignore-installed && mkdir -p /data /data_image
 ADD ./ ./
+RUN pip install --upgrade pip && pip install requirements.txt -i https://pypi.douban.com/simple --ignore-installed && mkdir -p /data /data_image
 
 CMD bash
